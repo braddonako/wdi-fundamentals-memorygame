@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CodePen</title>
+  <style>
+body {
+  padding: 30px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: 2px solid #dfdfdf;
+  padding: 8px 10px;
+  width: 200px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+input:focus, input:active, input:hover,
+button:focus, button:active, button:hover {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: #00D0CB;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 10px;
+  margin: 20px;
+  border-radius: 4px;
+  </style>
+</head>
+<body>
+  
+  <input type="text">
+  <button>Add Task</button>
+  <ul id="todo-list"></ul>
+<script>
+	
+	var addItem = function() {
+  var input = document.getElementsByTagName('input')[0];
+  var newItemText = input.value;
+  
+  var newItem = document.createElement('li');
+  newItem.innerHTML = newItemText;
+  document.getElementById('todo-list').appendChild(newItem);
+};
+
+document.getElementsByTagName('button')[0].addEventListener('click', addItem);
+</script>
+</body>
+</html>
